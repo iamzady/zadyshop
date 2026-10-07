@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ZADY ACCESSORIES — fashion, chains, rings and dresses for him and her.">
+<title>ZADY ACCESSORIES</title>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo"><span class="loader-symbol">◇</span>ZADY</div>
+    <div class="loader-sub">ACCESSORIES</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+    <div class="loader-text">LOADING...</div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <a href="#home" class="logo">
+    <span class="logo-mark">◇</span>ZADY
+    <small>ACCESSORIES</small>
+  </a>
+
+  <nav class="nav-scroll">
+    <a href="#home">HOME</a>
+    <a href="#men">MEN</a>
+    <a href="#women">WOMEN</a>
+    <a href="#new">NEW ARRIVALS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="icon-btn" onclick="openSearch()" title="Search">⌕</button>
+    <button class="icon-btn" onclick="openWishlist()" title="Wishlist">
+      ♡
+      <span class="count" id="wishlistCount">0</span>
+    </button>
+    <button class="icon-btn" onclick="openBag()" title="Bag">
+      🛍
+      <span class="count" id="bagCount">0</span>
+    </button>
+    <button class="icon-btn" onclick="openAccount()" title="Account">♙</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-copy reveal">
+    <div class="hero-eyebrow">ZADY ACCESSORIES / 2026</div>
+
+    <h1>
+      WEAR<br>
+      <span>THE</span><br>
+      MOMENT.
+    </h1>
+
+    <div class="hero-tagline">
+      <strong>Want to Impress Her/Him?</strong>
+      <p>Find Something They’ll Remember.</p>
+    </div>
+
+    <div class="hero-buttons">
+      <button class="btn cyan" onclick="goToGender('men')">SHOP FOR HIM</button>
+      <button class="btn" onclick="goToGender('women')">SHOP FOR HER</button>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="hero-frame">
+      <div class="hero-model">
+        <div class="hero-model-art"></div>
+      </div>
+      <div class="hero-number">01</div>
+    </div>
+  </div>
+</section>
+
+<!-- GENDER -->
+<section class="section reveal">
+  <div class="section-head">
+    <div>
+      <div class="kicker">CHOOSE YOUR SIDE</div>
+      <h2 class="section-title">FOR <span>THEM.</span></h2>
+    </div>
+    <p class="section-description">
+      Street-inspired accessories and fashion pieces made for moments that matter.
+    </p>
+  </div>
+
+  <div class="gender-choice">
+    <div class="gender-box" id="men">
+      <div class="kicker">01 / HIM</div>
+      <h3>MEN</h3>
+      <p>Chains. Rings. Dresses.</p>
+      <button class="btn cyan" onclick="showCategory('men','all')">SHOP MEN</button>
+    </div>
+
+    <div class="gender-box women" id="women">
+      <div class="kicker">02 / HER</div>
+      <h3>WOMEN</h3>
+      <p>Chains. Rings. Dresses.</p>
+      <button class="btn cyan" onclick="showCategory('women','all')">SHOP WOMEN</button>
+    </div>
+  </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section class="section reveal" id="new">
+  <div class="section-head">
+    <div>
+      <div class="kicker">FRESH DROP</div>
+      <h2 class="section-title">NEW <span>ARRIVALS.</span></h2>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom:18px;letter-spacing:3px;font-size:12px;">NEW FOR HIM</h3>
+  <div class="horizontal-products" id="newMen"></div>
+
+  <h3 style="margin:60px 0 18px;letter-spacing:3px;font-size:12px;">NEW FOR HER</h3>
+  <div class="horizontal-products" id="newWomen"></div>
+</section>
+
+<!-- SHOP BY CATEGORY -->
+<section class="section reveal">
+  <div class="section-head">
+    <div>
+      <div class="kicker">EXPLORE</div>
+      <h2 class="section-title">SHOP BY <span>CATEGORY.</span></h2>
+    </div>
+  </div>
+
+  <div class="category-buttons">
+    <button class="category-line" onclick="showCategory('men','dresses')">
+      <span>MEN — DRESSES</span>
+      <small>EXPLORE →</small>
+    </button>
+
+    <button class="category-line" onclick="showCategory('men','chains')">
+      <span>MEN — CHAINS</span>
+      <small>EXPLORE →</small>
+    </button>
+
+    <button class="category-line" onclick="showCategory('men','rings')">
+      <span>MEN — RINGS</span>
+      <small>EXPLORE →</small>
+    </button>
+
+    <button class="category-line" onclick="showCategory('women','dresses')">
+      <span>WOMEN — DRESSES</span>
+      <small>EXPLORE →</small>
+    </button>
+
+    <button class="category-line" onclick="showCategory('women','chains')">
+      <span>WOMEN — CHAINS</span>
+      <small>EXPLORE →</small>
+    </button>
+
+    <button class="category-line" onclick="showCategory('women','rings')">
+      <span>WOMEN — RINGS</span>
+      <small>EXPLORE →</small>
+    </button>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="section reveal">
+  <div class="section-head">
+    <div>
+      <div class="kicker">MOST WANTED</div>
+      <h2 class="section-title">BEST <span>SELLERS.</span></h2>
+    </div>
+  </div>
+
+  <div class="product-grid" id="bestSellers"></div>
+</section>
+
+<!-- GIFT -->
+<section class="section gift reveal">
+  <div>
+    <div class="kicker">A LITTLE SOMETHING</div>
+    <h2>MAKE THEIR DAY.</h2>
+    <p>
+      Avangalukku pidikkum-nu ninaikkura oru piece choose pannunga…
+    </p>
+
+    <div class="gift-buttons">
+      <button class="btn cyan" onclick="goToGender('men')">SHOP FOR HIM</button>
+      <button class="btn" onclick="goToGender('women')">SHOP FOR HER</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section reveal" id="about">
+  <div class="about-copy">
+    <div class="kicker">THE ZADY STORY</div>
+    <h2 class="section-title">ABOUT <span>ZADY.</span></h2>
+
+    <p class="big-line">
+      For moments that matter.
+    </p>
+
+    <p>
+      ZADY is built around youth, confidence and personal style.
+      From everyday chains and rings to fashion pieces that change the way
+      you feel, every collection is designed to make a statement without
+      trying too hard.
+    </p>
+
+    <p>
+      Street energy. Premium attitude. Your style.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section reveal" id="contact">
+  <div class="kicker">LET'S CONNECT</div>
+  <h2 class="section-title">CONTACT <span>ZADY.</span></h2>
+
+  <div class="contact-simple" style="margin-top:30px;">
+    <a class="btn cyan" href="https://wa.me/916385558452" target="_blank">
+      CHAT ON WHATSAPP
+    </a>
+
+    <a class="btn" href="#" onclick="instagramPlaceholder(event)">
+      FOLLOW ON INSTAGRAM
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="logo">
+      <span class="logo-mark">◇</span>ZADY
+      <small>ACCESSORIES</small>
+    </div>
+    <div style="color:#555;font-size:9px;margin-top:12px;">
+      © 2026 ZADY ACCESSORIES
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <a class="footer-link" href="https://wa.me/916385558452" target="_blank">WHATSAPP</a>
+    <a class="footer-link" href="#" onclick="instagramPlaceholder(event)">INSTAGRAM</a>
+    <button class="footer-link admin-link" onclick="openAdmin()">ADMIN</button>
+  </div>
+</footer>
+
+
+<!-- SEARCH OVERLAY -->
+<div class="overlay" id="searchOverlay">
+  <button class="close" onclick="closeOverlay('searchOverlay')">×</button>
+
+  <div class="overlay-inner">
+    <div class="search-box">
+      <div class="kicker">SEARCH ZADY</div>
+
+      <input
+        class="search-input"
+        id="searchInput"
+        placeholder="Search chains, rings, dresses..."
+        oninput="searchProducts()"
+      >
+
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- PRODUCT DETAIL -->
+<div class="overlay" id="productOverlay">
+  <button class="close" onclick="closeOverlay('productOverlay')">×</button>
+  <div class="overlay-inner">
+    <div class="product-view" id="productView"></div>
+  </div>
+</div>
+
+
+<!-- CATEGORY -->
+<div class="overlay" id="categoryOverlay">
+  <button class="close" onclick="closeOverlay('categoryOverlay')">×</button>
+
+  <div class="overlay-inner">
+    <div class="section-head">
+      <div>
+        <div class="kicker" id="categoryKicker">COLLECTION</div>
+        <h2 class="section-title" id="categoryTitle">MEN</h2>
+      </div>
+
+      <p class="section-description">
+        Explore the latest ZADY collection.
+      </p>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px;">
+      <button class="btn" onclick="categoryFilter('dresses')">DRESSES</button>
+      <button class="btn" onclick="categoryFilter('chains')">CHAINS</button>
+      <button class="btn" onclick="categoryFilter('rings')">RINGS</button>
+      <button class="btn" onclick="categoryFilter('all')">ALL</button>
+    </div>
+
+    <div class="product-grid" id="categoryProducts"></div>
+  </div>
+</div>
+
+
+<!-- BAG -->
+<div class="side-panel" id="bagPanel">
+  <div class="panel-head">
+    <h2>YOUR BAG</h2>
+    <button class="icon-btn" onclick="closeBag()">×</button>
+  </div>
+
+  <div id="bagItems"></div>
+
+  <div id="bagFooter"></div>
+</div>
+
+
+<!-- WISHLIST -->
+<div class="side-panel" id="wishlistPanel">
+  <div class="panel-head">
+    <h2>WISHLIST</h2>
+    <button class="icon-btn" onclick="closeWishlist()">×</button>
+  </div>
+
+  <div id="wishlistItems"></div>
+</div>
+
+
+<!-- CHECKOUT -->
+<div class="overlay" id="checkoutOverlay">
+  <button class="close" onclick="closeOverlay('checkoutOverlay')">×</button>
+
+  <div class="overlay-inner">
+    <div class="checkout">
+      <div class="kicker">CHECKOUT</div>
+      <h2 class="section-title">YOUR <span>ORDER.</span></h2>
+
+      <div class="checkout-grid" style="margin-top:35px;">
+
+        <div>
+
+          <div class="form-box">
+            <h3>DELIVERY DETAILS</h3>
+
+            <div class="form-grid">
+              <input class="input" id="checkoutName" placeholder="Full Name">
+              <input class="input" id="checkoutPhone" placeholder="Phone Number">
+
+              <textarea
+                class="input full"
+                id="checkoutAddress"
+                rows="4"
+                placeholder="Full Address"
+              ></textarea>
+
+              <input class="input" id="checkoutPincode" placeholder="Pincode">
+              <input class="input" id="checkoutCity" placeholder="City">
+
+              <input class="input full" id="checkoutState" placeholder="State">
+            </div>
+          </div>
+
+          <div class="form-box" style="margin-top:15px;">
+            <h3>PAYMENT</h3>
+
+            <div class="payment-choice">
+              <button class="payment active" id="upiPayment" onclick="choosePayment('UPI')">
+                UPI
+              </button>
+
+              <button class="payment" id="codPayment" onclick="choosePayment('COD')">
+                CASH ON DELIVERY
+              </button>
+            </div>
+
+            <div id="upiArea">
+              <p style="color:#888;font-size:12px;margin-bottom:15px;">
+                Pay securely using your UPI app.
+              </p>
+
+              <div style="
+                background:#fff;
+                color:#111;
+                padding:20px;
+                width:180px;
+                margin:auto;
+                text-align:center;
+              ">
+                <div style="
+                  display:grid;
+                  grid-template-columns:repeat(9,1fr);
+                  gap:3px;
+                  width:130px;
+                  height:130px;
+                  margin:auto;
+                " id="fakeQR"></div>
+
+                <strong style="display:block;margin-top:12px;font-size:10px;">
+                  6385558452@pthdfc
+                </strong>
+              </div>
+
+              <p style="text-align:center;color:#777;font-size:10px;margin-top:12px;">
+                UPI ID: 6385558452@pthdfc
+              </p>
+
+              <p style="
+                text-align:center;
+                color:#555;
+                font-size:9px;
+                margin-top:8px;
+              ">
+                Demo payment UI — connect a real payment gateway before production.
+              </p>
+            </div>
+
+            <div id="codArea" style="display:none;">
+              <p style="color:#888;font-size:12px;">
+                Pay cash when your ZADY order is delivered.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-box" style="margin-top:15px;">
+            <h3>AVAILABLE OFFERS</h3>
+
+            <div id="checkoutCoupons"></div>
+
+            <div class="coupon-box" style="margin-top:12px;">
+              <input class="input" id="couponInput" placeholder="Coupon code">
+              <button class="btn cyan" onclick="applyCoupon()">APPLY</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="form-box">
+            <h3>ORDER SUMMARY</h3>
+            <div id="checkoutSummary"></div>
+
+            <button
+              class="btn cyan"
+              style="width:100%;margin-top:20px;"
+              onclick="placeOrder()"
+            >
+              PLACE ORDER
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ACCOUNT -->
+<div class="overlay" id="accountOverlay">
+  <button class="close" onclick="closeOverlay('accountOverlay')">×</button>
+
+  <div class="overlay-inner">
+    <div class="account" id="accountContent"></div>
+  </div>
+</div>
+
+
+<!-- ADMIN LOGIN -->
+<div class="overlay" id="adminLoginOverlay">
+  <button class="close" onclick="closeOverlay('adminLoginOverlay')">×</button>
+
+  <div class="overlay-inner">
+    <div class="auth">
+      <div class="kicker">ZADY PRIVATE AREA</div>
+      <h2>ADMIN</h2>
+      <p>Authorized access only.</p>
+
+      <input class="input" id="adminUsername" placeholder="Username">
+      <input class="input" id="adminPassword" type="password" placeholder="Password">
+
+      <button class="btn cyan" style="width:100%;" onclick="adminLogin()">
+        LOGIN
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ADMIN DASHBOARD -->
+<div class="overlay" id="adminOverlay">
+  <button class="close" onclick="closeOverlay('adminOverlay')">×</button>
+
+  <div class="overlay-inner">
+    <div class="admin">
+
+      <div class="admin-top">
+        <div>
+          <div class="kicker">ZADY ACCESSORIES</div>
+          <h2 class="section-title">ADMIN <span>PANEL.</span></h2>
+        </div>
+
+        <button class="btn" onclick="adminLogout()">LOGOUT</button>
+      </div>
+
+      <div class="admin-stats">
+        <div class="stat">
+          <small>PRODUCTS</small>
+          <strong id="statProducts">0</strong>
+        </div>
+
+        <div class="stat">
+          <small>ORDERS</small>
+          <strong id="statOrders">0</strong>
+        </div>
+
+        <div class="stat">
+          <small>REVIEWS</small>
+          <strong id="statReviews">0</strong>
+        </div>
+
+        <div class="stat">
+          <small>COUPONS</small>
+          <strong id="statCoupons">0</strong>
+        </div>
+      </div>
+
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="adminTab('products',this)">PRODUCTS</button>
+        <button class="admin-tab" onclick="adminTab('orders',this)">ORDERS</button>
+        <button class="admin-tab" onclick="adminTab('reviews',this)">REVIEWS</button>
+        <button class="admin-tab" onclick="adminTab('coupons',this)">COUPONS</button>
+      </div>
+
+      <div id="adminContent"></div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
